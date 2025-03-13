@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ST10434135_CLDV6211_Part1.Models.Venues>
+
+@{
+    ViewBag.Title = "Venues";
+}
+
+<h2>Venues</h2>
+
+<p>
+    <a asp-action="Create" class="btn-turquoise">Create New Venue</a>
+</p>
+
+<div class="card-container">
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <h3>Venue ID: @Html.DisplayFor(modelItem => item.VenueID)</h3>
+            <p><strong>Venue Name:</strong> @Html.DisplayFor(modelItem => item.VenueName)</p>
+            <p><strong>Location:</strong> @Html.DisplayFor(modelItem => item.Location)</p>
+            <p><strong>Capacity:</strong> @Html.DisplayFor(modelItem => item.Capacity)</p>
+            <p>
+                <strong>Image URL:</strong>
+                <a href="/VenueImages/SampleImage.jpg" target="_blank">View Sample Image</a>
+            </p>
+            <p>
+                <a asp-action="Edit" asp-route-id="@item.VenueID" class="btn">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.VenueID" class="btn">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.VenueID" class="btn">Delete</a>
+            </p>
+        </div>
+    }
+</div>

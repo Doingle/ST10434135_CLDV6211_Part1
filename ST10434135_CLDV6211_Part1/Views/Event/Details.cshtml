@@ -1,0 +1,20 @@
+﻿@model ST10434135_CLDV6211_Part1.Models.Events
+
+@{
+    ViewBag.Title = "Event Details";
+}
+
+<h2>Event Details</h2>
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EventName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EventName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName

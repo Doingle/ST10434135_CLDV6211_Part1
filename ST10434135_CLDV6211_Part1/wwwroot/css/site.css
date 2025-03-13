@@ -1,0 +1,108 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', sans-serif; /* Modern font */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* Header Styles */
+header {
+    background-color: #48b9b9; /* Turquoise */
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+    header nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+        header nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+            header nav ul li a {
+                color: #fff;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+/* Card Styles */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+    .card h3 {
+        margin-top: 0;
+        font-size: 1.5em;
+    }
+
+    .card p {
+        margin: 10px 0;
+    }
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #48b9b9; /* Turquoise */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    .btn:hover {
+        background-color: #3a9898;
+    }
+
+/* Turquoise Button */
+.btn-turquoise {
+    background-color: #48b9b9; /* Turquoise */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    .btn-turquoise:hover {
+        background-color: #3a9898;
+    }
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
