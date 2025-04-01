@@ -9,20 +9,24 @@ namespace ST10434135_CLDV6211_Part1.Controllers
 {
     public class EventController : Controller
     {
+        // this variable is used to get the database context
         private readonly AppDbContext _context;
 
+        // this constructor initializes the database context
         public EventController(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: Event
+        //---------------------------------------------------------------------------------//
+        // this method gets all events from the database and returns the view
         public async Task<IActionResult> Index()
         {
             return View(await _context.Events.ToListAsync());
         }
 
-        // GET: Event/Details/5
+        //---------------------------------------------------------------------------------//
+        // this method retrieves the event details by id and returns the view
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -40,13 +44,15 @@ namespace ST10434135_CLDV6211_Part1.Controllers
             return View(@event);
         }
 
-        // GET: Event/Create
+        //---------------------------------------------------------------------------------//
+        // this method gets the view to create a new event
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Event/Create
+        //---------------------------------------------------------------------------------//
+        // this method creates a new event and saves it to the database, it then redirects to the index page
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("EventID,EventName,EventDate,Description,VenueID")] Events @event)
@@ -60,7 +66,8 @@ namespace ST10434135_CLDV6211_Part1.Controllers
             return View(@event);
         }
 
-        // GET: Event/Edit/5
+        //---------------------------------------------------------------------------------//
+        // this asynchronous method gets the event details by id and returns the view
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -76,7 +83,8 @@ namespace ST10434135_CLDV6211_Part1.Controllers
             return View(@event);
         }
 
-        // POST: Event/Edit/5
+        //---------------------------------------------------------------------------------//
+        // this asynchronous method updates the event details and saves it to the database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("EventID,EventName,EventDate,Description,VenueID")] Events @event)
@@ -109,7 +117,8 @@ namespace ST10434135_CLDV6211_Part1.Controllers
             return View(@event);
         }
 
-        // GET: Event/Delete/5
+        //---------------------------------------------------------------------------------//
+        // this asynchronous method gets the event details by id and returns the view
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -127,7 +136,8 @@ namespace ST10434135_CLDV6211_Part1.Controllers
             return View(@event);
         }
 
-        // POST: Event/Delete/5
+        //---------------------------------------------------------------------------------//
+        // this asynchronous method deletes the event from the database, adds delete functionality
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -138,9 +148,12 @@ namespace ST10434135_CLDV6211_Part1.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        //---------------------------------------------------------------------------------//
+        // this method checks if the event exists. it's used for error handling
         private bool EventExists(int id)
         {
             return _context.Events.Any(e => e.EventID == id);
         }
     }
 }
+//------------------------------------------------------EOF------------------------------------------------------//

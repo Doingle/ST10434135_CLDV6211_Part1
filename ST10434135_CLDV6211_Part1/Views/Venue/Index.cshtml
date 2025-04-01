@@ -19,8 +19,8 @@
             <p><strong>Location:</strong> @Html.DisplayFor(modelItem => item.Location)</p>
             <p><strong>Capacity:</strong> @Html.DisplayFor(modelItem => item.Capacity)</p>
             <p>
-                <strong>Image URL:</strong>
-                <a href="/VenueImages/SampleImage.jpg" target="_blank">View Sample Image</a>
+                <strong>Venue Sample Image:</strong>
+                <img src="~/VenueImages/SampleImage.jpg" alt="Sample Image for each venu" class="venue-image" />
             </p>
             <p>
                 <a asp-action="Edit" asp-route-id="@item.VenueID" class="btn">Edit</a>
