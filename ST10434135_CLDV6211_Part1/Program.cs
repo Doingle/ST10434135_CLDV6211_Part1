@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ST10434135_CLDV6211_Part1.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,3 +32,14 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+#region REFERENCES
+
+//throughout the implementation of this project, I have utilised AI for the structring of classes and assistance with creating various methods. models or views
+// I have, to the best of my abilities, reworked any responses to make them my own and referenced where necessary.
+// OpenAI (2025). ChatGPT 3.5 LLM. [online] ChatGPT. Available at: https://chatgpt.com/.
+//[Accessed 28 March 2025]
+
+‌
+
+#endregion
